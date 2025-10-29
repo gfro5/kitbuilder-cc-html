@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kit Builder – Click & Collect Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <input type="checkbox" id="availability-toggle" checked hidden />
+  <div class="page">
+    <header class="masthead">
+      <div class="brand">
+        <span class="brand-logo">C&amp;C</span>
+        <div class="brand-copy">
+          <h1>ITS Kit Builder</h1>
+          <p>Build your custom DeWalt kit with real-time Click &amp; Collect availability.</p>
+        </div>
+      </div>
+      <div class="masthead-controls">
+        <div class="store-selector">
+          <label for="store">Collect from</label>
+          <div class="store-select-wrapper">
+            <select id="store" name="store">
+              <option>Walthamstow</option>
+              <option>Harlow</option>
+              <option>Chelmsford</option>
+            </select>
+            <button type="button" class="change-store">Change</button>
+          </div>
+          <p class="store-note">Showing live stock for selected store. Update to view another location.</p>
+        </div>
+        <label class="availability-toggle" for="availability-toggle">
+          <span class="toggle-label">Show inline store availability</span>
+          <span class="toggle-switch" aria-hidden="true">
+            <span class="toggle-handle"></span>
+          </span>
+        </label>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="kit-summary" aria-labelledby="kit-summary-title">
+        <div class="summary-header">
+          <h2 id="kit-summary-title">Kit Summary</h2>
+          <div class="summary-status success">Ready for Click &amp; Collect</div>
+        </div>
+        <p class="summary-subtitle">All 5 selected products are available for same-day collection.</p>
+        <div class="store-availability">
+          <article class="store-pill success">
+            <header>
+              <h3>Walthamstow</h3>
+              <span class="status">Ready today</span>
+            </header>
+            <p>All items in stock • Reserve by 5pm • Collect after 6pm</p>
+          </article>
+          <article class="store-pill warning">
+            <header>
+              <h3>Harlow</h3>
+              <span class="status">1 item limited</span>
+            </header>
+            <p>4 of 5 available • Charger due tomorrow • Reserve to secure stock</p>
+          </article>
+          <article class="store-pill alert">
+            <header>
+              <h3>Chelmsford</h3>
+              <span class="status">Unavailable</span>
+            </header>
+            <p>Kit cannot be fulfilled • Choose a different store to continue</p>
+          </article>
+        </div>
+        <div class="summary-list">
+          <h4>Selected products</h4>
+          <ul>
+            <li>DCF850 Impact Driver • Qty 1</li>
+            <li>DCD999 Hammer Drill • Qty 1</li>
+            <li>5.0Ah Powerstack Battery • Qty 2</li>
+            <li>Dual Port Fast Charger • Qty 1</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="product-grid" aria-labelledby="grid-title">
+        <div class="grid-header">
+          <h2 id="grid-title">Pick tools for your kit</h2>
+          <p>Availability is shown inline when the toggle is on. Use the accordion to explore full store details.</p>
+        </div>
+
+        <div class="grid-items">
+          <article class="product-card">
+            <div class="product-media" aria-hidden="true">
+              <span class="media-badge">New</span>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">DCF850 XR Brushless Impact Driver</h3>
+              <p class="product-code">SKU: 403890</p>
+              <div class="price-row">
+                <span class="price">£179.99</span>
+                <button class="add-to-kit">Add to kit</button>
+              </div>
+              <div class="inline-availability success">
+                <span class="store">Walthamstow</span>
+                <span class="stock">In stock today</span>
+              </div>
+            </div>
+            <details class="cc-accordion">
+              <summary>
+                <span class="summary-icon" aria-hidden="true"></span>
+                <span>Click &amp; Collect availability</span>
+              </summary>
+              <ul>
+                <li class="success">
+                  <span class="location">Walthamstow</span>
+                  <span class="badge">Ready today</span>
+                </li>
+                <li class="warning">
+                  <span class="location">Harlow</span>
+                  <span class="badge">Low stock</span>
+                </li>
+                <li class="alert">
+                  <span class="location">Chelmsford</span>
+                  <span class="badge">Out of stock</span>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media battery" aria-hidden="true">
+              <span class="media-badge">Bundle</span>
+            </div>
+            <div class="product-content">
+              <h3 class="product-name">5.0Ah Powerstack Battery Twin Pack</h3>
+              <p class="product-code">SKU: 372591</p>
+              <div class="price-row">
+                <span class="price">£199.99</span>
+                <button class="add-to-kit">Add to kit</button>
+              </div>
+              <div class="inline-availability warning">
+                <span class="store">Walthamstow</span>
+                <span class="stock">1 remaining</span>
+              </div>
+            </div>
+            <details class="cc-accordion">
+              <summary>
+                <span class="summary-icon" aria-hidden="true"></span>
+                <span>Click &amp; Collect availability</span>
+              </summary>
+              <ul>
+                <li class="success">
+                  <span class="location">Walthamstow</span>
+                  <span class="badge">Reserve now</span>
+                </li>
+                <li class="success">
+                  <span class="location">Harlow</span>
+                  <span class="badge">Ready today</span>
+                </li>
+                <li class="warning">
+                  <span class="location">Chelmsford</span>
+                  <span class="badge">Limited</span>
+                </li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media charger" aria-hidden="true"></div>
+            <div class="product-content">
+              <h3 class="product-name">Dual Port Fast Charger</h3>
+              <p class="product-code">SKU: 284011</p>
+              <div class="price-row">
+                <span class="price">£109.99</span>
+                <button class="add-to-kit">Add to kit</button>
+              </div>
+              <div class="inline-availability alert">
+                <span class="store">Walthamstow</span>
+                <span class="stock">Next-day transfer</span>
+              </div>
+            </div>
+            <details class="cc-accordion">
+              <summary>
+                <span class="summary-icon" aria-hidden="true"></span>
+                <span>Click &amp; Collect availability</span>
+              </summary>
+              <ul>
+                <li class="warning">
+                  <span class="location">Walthamstow</span>
+                  <span class="badge">Transfer required</span>
+                </li>
+                <li class="success">
+                  <span class="location">Harlow</span>
+                  <span class="badge">Ready today</span>
+                </li>
+                <li class="alert">
+                  <span class="location">Chelmsford</span>
+                  <span class="badge">Unavailable</span>
+                </li>
+              </ul>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="basket-check" aria-labelledby="basket-title">
+        <div class="basket-card">
+          <h2 id="basket-title">Basket confirmation</h2>
+          <p class="basket-copy">
+            Before checkout we double-check your kit against store inventory. All items are still ready for same-day
+            collection at <strong>Walthamstow</strong>.
+          </p>
+          <div class="basket-status success">All items reserved • Collect after 6pm</div>
+          <button class="continue">Proceed to checkout</button>
+        </div>
+        <aside class="basket-tips">
+          <h3>What happens next?</h3>
+          <ul>
+            <li>We hold your kit until end of the next business day.</li>
+            <li>You’ll receive SMS and email confirmations when it’s ready.</li>
+            <li>Bring photo ID and order number to collect in store.</li>
+          </ul>
+        </aside>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
